@@ -28,7 +28,7 @@ Questo è un progetto basato su React che recupera articoli di notizie dall'API 
 1. **Clona il repository**:
 
     ```bash
-    git clone https://github.com/tuo-username/nyt-project.git
+    git clone https://github.com/paulwebdevpe/nyTime-clone.git
 
 2. **Installa le dipendenze**:
 
