@@ -97,7 +97,7 @@ function Article() {
             {(article.multimedia?.[1]?.caption ||
               article?.["media:credit"] ||
               article?.caption) && (
-              <figcaption className="flex">
+              <div className="flex ">
                 <p className=" pt-3 text-base sm:text-sm w-full">
                   {article?.multimedia?.[1]?.caption ||
                     article?.caption ||
@@ -110,11 +110,10 @@ function Article() {
                     : ""}
                   <span className="font-semibold">
                     {article?.multimedia?.[1]?.copyright ||
-                      article?.copy ||
-                      article?.["media:credit"]}
+                      article?.copy }
                   </span>
                 </p>
-              </figcaption>
+              </div>
             )}
             <button
               onClick={() => saveArticle(article)}

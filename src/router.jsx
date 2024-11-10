@@ -11,36 +11,29 @@ import Profile from "./pages/Profile";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
     errorElement: <PageNotFound />,
-  },
-  {
-    path: "/:sectionId",
     children: [
       {
         index: true,
-        element: <Section />,
+        element: <App />,
       },
       {
-        path: "subSection/:subSectionId",
-        element: <RssFeedSubSection />,
+        path: ":sectionId",
+        children: [  {
+          index: true,
+          element: <Section />,
+        },
+          {
+
+            path: "subSection/:subSectionId",
+            element: <RssFeedSubSection />,
+          },
+        ],
       },
+      { path: "article", element: <Article /> },
+      { path: "login", element: <Login /> },
+      { path: "search", element: <Search /> },
+      { path: "profile", element: <Profile /> },
     ],
-  },
-  {
-    path: "/article",
-    element: <Article />,
-  },
-  {
-    path: "/login",
-    element: <Login></Login>,
-  },
-  {
-    path: "/search",
-    element: <Search></Search>,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
   },
 ]);

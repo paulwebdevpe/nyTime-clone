@@ -43,7 +43,7 @@ function Section() {
           <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
             <Navbar hideLogoAndDate={true} hideLinks={true}>
               <Link to="/">
-                <img className="max-h-8 " src={logo} alt="Logo image" />{" "}
+                <img className="max-h-8 " src={logo} alt="Logo image" />
               </Link>
             </Navbar>
           </div>
@@ -60,9 +60,9 @@ function Section() {
               {articles?.length != 0 &&
                 articles?.slice(1, 2).map((article, index) => (
                   <div className="text-center	" key={index}>
-                    <div>
+                  <Link to="/article" state={{ data: article }}>    <div>
                       {article.multimedia && article.multimedia.length > 0 ? (
-                        <img
+                      <img
                           className=" max-h-[584px] w-full "
                           src={article.multimedia[0].url}
                           alt={article.multimedia[0].caption || "Article Image"}
@@ -76,12 +76,12 @@ function Section() {
                             article?.multimedia?.[1]?.caption || "Article Image"
                           }
                         />
-                      )}{" "}
-                      <h2 className="text-3xl">
+                      )}
+                      <h2 className="text-3xl hover:text-gray-600">
                         {article?.title || "data not found"}
                       </h2>
                       <p>{article?.abstract || "data not found"}</p>
-                    </div>
+                   </div></Link> 
                   </div>
                 ))}
             </div>
@@ -92,12 +92,12 @@ function Section() {
                   <div key={index} className=" ">
                     <Link to="/article" state={{ data: article }}>
                       <div
-                        className={`flex md:flex-col sm:flex-col hover:text-gray-600 ${
+                        className={`flex md:flex-col sm:flex-col  ${
                           index != 0 &&
                           "border-t border-black pt-3 lg:border-0 lg:pt-0"
                         }`}
                       >
-                        <h3 className="text-2xl text-left leading-6	pb-2 font-semibold">
+                        <h3 className="text-2xl text-left leading-6	pb-2 font-semibold hover:text-gray-600">
                           {article.title}
                         </h3>
                         {article.multimedia &&
@@ -124,7 +124,6 @@ function Section() {
               articles?.slice(5, 13).map((article, index) => (
                 <div key={index}>
                   <Link to="/article" state={{ data: article }}>
-                    {" "}
                     <div>
                       {article.multimedia && article.multimedia.length > 0 ? (
                         <img

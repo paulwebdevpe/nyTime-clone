@@ -62,7 +62,7 @@ function RssFeedSubSection() {
       <div className="max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
         <div className="pb-5 border-b border-black">
           <h2 className="font-bold"> {sectionId}</h2>
-          <h1 className="font-bold text-5xl">
+          <h1 className="font-bold text-5xl sm:text-[32px]">
             {error ? "Page Not Found" : subSectionId}
           </h1>
         </div>

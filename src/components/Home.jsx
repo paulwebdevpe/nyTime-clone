@@ -7,7 +7,7 @@ const Home = ({ artStart, artEnd, imgArt }) => {
 
   return (
     <main className="flex  mb-3 border-t  border-black pt-3 mr-3 lg:mr-0 md:flex md:flex-col md:mr-0 sm:mr-0 sm:flex sm:flex-col  ">
-      <ul className="w-[40%] md:w-full sm:w-full sm:order-last">
+      <ul className="w-[40%] md:w-full sm:w-full sm:order-last md:order-last">
         {articles?.slice(artStart, artEnd).map((article, index) => (
           <li className="flex " key={index}>
             <Link to="/article" state={{ data: article }}>

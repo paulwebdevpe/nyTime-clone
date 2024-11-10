@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/newyork.png";
 import { auth, db } from "../firebase/setup";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import {
   setDoc,
   doc,
