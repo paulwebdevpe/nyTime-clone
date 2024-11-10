@@ -12,7 +12,8 @@ import formattedDate from "../utils/formattedDate";
 function Article() {
   const location = useLocation();
   const article = location.state?.data || {};
-
+  console.log(article);
+  
   const [saved, setSaved] = useState(false);
 
   const saveArticle = async (articles) => {
@@ -68,7 +69,7 @@ function Article() {
       <article className="  max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3">
         <div className="max-w-[600px] mx-auto ">
           {article.title && (
-            <h1 className="text-4xl font-bold mb-3 pt-4">{article.title}</h1>
+            <h1 className="text-4xl font-bold mb-3 pt-4">{article.title || article.headline.main}</h1>
           )}
           <p className="text-2xl">
             {article?.abstract || article?.description || article?.subTitle}

@@ -30,10 +30,12 @@ function SearchPage() {
     };
     fetchSearchArticle();
   }, [sectionSearch, apiKey, dispatch]);
+console.log( searchArticle
+);
 
   return (
-    <div >
-         <div className=" w-full border-b border-black pb-2">
+    <div>
+      <div className=" w-full border-b border-black pb-2">
         <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
           <Navbar hideLogoAndDate={true} hideLinks={true}>
             <Link to="/">
@@ -43,36 +45,36 @@ function SearchPage() {
         </div>
       </div>
       <div className="bg-gray-200 text-3xl py-8">
-        <h1 className="max-w-[900px] mx-auto">{sectionSearch}</h1>
+        <h1 className="max-w-[900px] mx-auto sm:px-3">{sectionSearch}</h1>
       </div>
-      <section>
+      <section className="px-3">
         <div className=" max-w-[900px] mx-auto">
           {searchArticle?.slice(0, 10).map((article, index) => (
-            <div className="flex border-t border-black py-5" key={index}>
-              <span className="block w-[14%] ">
+            <div className="flex border-t border-black py-5 sm:flex sm:flex-col" key={index}>
+              <span className="block w-[20%] sm:order-last sm:w-full">
                 {formattedDate(article.pub_date)}
               </span>
-              <div className="w-[60%]">
-                <Link to="/Article" state={{ data: article }}>
+              <div className="w-[80%] sm:w-full">
+                {article.multimedia && article.multimedia.length > 0 && (
+                  <img
+                    className=" float-right max-h-40 sm:max-h-28 right-0 ml-2 mb-2"
+                    src={`https://www.nytimes.com/${article.multimedia[35].url}`}
+                    alt={article.headline.main}
+                  />
+                )}
+
+                <Link to="/article" state={{ data: article }}>
                   <h1 className="text-2xl leading-none pb-2">
                     {article.headline.main}
                   </h1>
                   <p>{article.abstract}</p>
                 </Link>
               </div>
-              <div className="w-[26%]">
-                {article.multimedia && article.multimedia.length > 0 && (
-                  <img
-                    className="w-full"
-                    src={`https://www.nytimes.com/${article.multimedia[35].url}`}
-                    alt={article.headline.main}
-                  />
-                )}
-              </div>
             </div>
           ))}
         </div>
-      </section>
+      </section>         
+
     </div>
   );
 }

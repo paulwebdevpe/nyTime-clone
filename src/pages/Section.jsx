@@ -156,7 +156,7 @@ function Section() {
               {articles?.length != 0 &&
                 articles?.slice(13, 23).map((article, index) => (
                   <div
-                    className=" py-3  clearfixm sm:flex sm:flex-col "
+                    className=" py-3  clearfix sm:flex sm:flex-col "
                     key={index}
                   >
                     <div className="sm:order-last">
