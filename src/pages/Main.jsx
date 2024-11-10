@@ -20,6 +20,8 @@ export const Main = ({}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    
+ // If the scroll position exceeds the threshold of 300 pixels, the navbar is shown; otherwise, it is hidden.
     const handleScroll = () => {
       if (window.scrollY > 300) {
         // Adjust this value to set the scroll threshold
@@ -36,16 +38,13 @@ export const Main = ({}) => {
     };
   }, []);
 
-   // Fetch Home Articles
-   const fetchHomeArticles = async () => {
+  // Fetch Home Articles
+  const fetchHomeArticles = async () => {
     try {
       const response = await axios.get(
         `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`
       );
-      const data = response?.data?.results.map((res, index) => ({
-        ...res,
-        id: index + 1,
-      }));
+      const data = response?.data?.results
       dispatch(setArticles(data));
     } catch (error) {
       console.error("Error fetching home articles:", error);
@@ -59,10 +58,14 @@ export const Main = ({}) => {
         "https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml"
       );
       const parsedData = await new Promise((resolve, reject) => {
-        xml2js.parseString(response.data, { explicitArray: false }, (err, result) => {
-          if (err) reject(err);
-          else resolve(result);
-        });
+        xml2js.parseString(
+          response.data,
+          { explicitArray: false },
+          (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+          }
+        );
       });
       const articles = parsedData?.rss?.channel?.item || [];
       dispatch(setSideArticles(articles));
@@ -102,10 +105,10 @@ export const Main = ({}) => {
       {/* // when scroll down, show the navbar */}
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
-          showNavbar ? "translate-y-0" : "-translate-y-full"
+          showNavbar ? "-translate-y-3" : "-translate-y-full"
         }`}
       >
-        <div className="bg-white  text-black shadow-md">
+        <div className="bg-white  text-black shadow-md mt-0">
           <Navbar hideLogoAndDate={true} hideSearchAndLogin={true}></Navbar>
         </div>
       </div>

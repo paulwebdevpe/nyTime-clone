@@ -59,7 +59,7 @@ function Navbar({
   };
   return (
     <>
-      <header className="pt-2">
+      <header className="my-3">
         {!hideSearchAndLogin && (
           <div className="flex justify-between	relative ">
             <div className="">
@@ -123,7 +123,7 @@ function Navbar({
           </div>
         )}
       </header>
-      <nav ref={logoRef} className="pt-1 ">
+      <nav ref={logoRef} className=" ">
         {!hideLogoAndDate && (
           <div className="flex relative lg:flex lg:flex-col md:flex  md:flex-col sm:flex sm:flex-col">
             {/* LOGO */}
