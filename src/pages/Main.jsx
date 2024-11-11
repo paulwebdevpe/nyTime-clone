@@ -107,14 +107,7 @@ export const Main = ({}) => {
  const articles = useSelector((state) => state.navigation.articles);
   console.log(articles);
     
-  // loading screen
-  if (isLoading)
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-t-4 border-gray-200 rounded-full animate-spin border-t-gray-600"></div>
-      </div>
-    );
-    
+ 
  
   return (
     <div className="max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">

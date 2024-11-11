@@ -29,16 +29,16 @@ const Home = ({ artStart, artEnd, imgArt }) => {
           </li>
         ))}
       </ul>
-      <div className="w-[60%]  pl-3 md:w-full  md:pl-0 sm:w-full sm:pl-0">
+      <div className="w-[60%]  pl-3 md:w-full   md:pl-0 sm:w-full sm:pl-0">
         {articles?.map((article, index) => (
           <div className="" key={index}>
             {index == imgArt &&
               article.multimedia &&
               article.multimedia.length > 0 && (
                 <Link to="/article" state={{ data: article }}>
-                  <img 
-                    className="h-full w-[450px] "
-                    src={article.multimedia[1].url }
+                  <img width="460" height="310" loading="lazy"
+                    className="h-full w-full lg: object-cover"
+                    src={article.multimedia[1].url  }
                     alt={article.multimedia[1].caption || "Article Image"}
                   />
                 </Link>

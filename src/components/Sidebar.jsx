@@ -14,8 +14,8 @@ const Sidebar = () => {
             <Link to="/Article" state={{ data: article }}>
               <div>
                 {article["media:content"] && (
-                  <img
-                    className="w-full max-h-[250px] lg:max-h-[500px] "
+                  <img width="330" height="250" loading="lazy"
+                    className="w-full max-h-[250px] lg:max-h-[500px] object-cover "
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}
                   />
@@ -75,8 +75,8 @@ const Sidebar = () => {
                 }
               >
                 {article["media:content"] && (
-                  <img
-                    className="w-full max-h-[250px] lg:max-h-[500px] py-4"
+                  <img width="100" height="150" loading="lazy"    
+                    className="h-full w-full py-4 object-cover"
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}
                   />
