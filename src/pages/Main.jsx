@@ -18,7 +18,6 @@ export const Main = ({}) => {
 
   const [showNavbar, setShowNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     // If the scroll position exceeds the threshold of 300 pixels, the navbar is shown; otherwise, it is hidden.
@@ -99,7 +98,6 @@ export const Main = ({}) => {
       await fetchHomeArticles();
       await fetchSideArticles();
       await fetchNewsSections();
-      setLoading(false); // Set loading to false only after all data is fetched
     };
     fetchData();
   }, [dispatch]);
