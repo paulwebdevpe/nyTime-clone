@@ -65,7 +65,7 @@ const Profile = () => {
 
   return (
     <div>
-      <div className=" w-full border-b border-black pb-2">
+      <div className=" w-full border-b border-black ">
         <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
           <Navbar hideLogoAndDate={true} hideLinks={true}>
             <Link to="/">

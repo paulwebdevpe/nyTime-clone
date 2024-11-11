@@ -18,10 +18,10 @@ export const Main = ({}) => {
 
   const [showNavbar, setShowNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    
- // If the scroll position exceeds the threshold of 300 pixels, the navbar is shown; otherwise, it is hidden.
+    // If the scroll position exceeds the threshold of 300 pixels, the navbar is shown; otherwise, it is hidden.
     const handleScroll = () => {
       if (window.scrollY > 300) {
         // Adjust this value to set the scroll threshold
@@ -44,7 +44,7 @@ export const Main = ({}) => {
       const response = await axios.get(
         `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`
       );
-      const data = response?.data?.results
+      const data = response?.data?.results;
       dispatch(setArticles(data));
     } catch (error) {
       console.error("Error fetching home articles:", error);
@@ -94,11 +94,23 @@ export const Main = ({}) => {
   };
 
   useEffect(() => {
-    fetchHomeArticles();
-    fetchSideArticles();
-    fetchNewsSections();
+    const fetchData = async () => {
+      await fetchHomeArticles();
+      await fetchSideArticles();
+      await fetchNewsSections();
+      setLoading(false); // Set loading to false only after all data is fetched
+    };
+    fetchData();
   }, [dispatch]);
 
+  // loading screen
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-t-4 border-gray-200 rounded-full animate-spin border-t-gray-600"></div>
+      </div>
+    );
+    
   return (
     <div className="max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
       <Navbar logoRef={logoRef} onMenuToggle={setIsMenuOpen}></Navbar>

@@ -33,9 +33,9 @@ function Footer({ logoRef }) {
           {/* on mobile */}
           <button
             onClick={() => toggleSection("news")}
-            className="sm:block hidden" type="button"
+            className="sm:block hidden sm:w-full" type="button"
           >
-            <h3 className="pb-3 font-bold block">NEWS</h3>
+            <h3 className="pb-3 font-bold block sm:text-start">NEWS</h3>
           </button>
           {/* not on mobile */}
           <h3 className="pb-3 font-bold block sm:hidden">NEWS</h3>
@@ -89,9 +89,9 @@ function Footer({ logoRef }) {
           {/* on mobile */}
           <button
             onClick={() => toggleSection("arts")}
-            className="sm:block hidden" type="button"
+            className="sm:block hidden sm:w-full" type="button"
           >
-            <h3 className="pb-3 font-bold block  ">ARTS</h3>
+            <h3 className="pb-3 font-bold block sm:text-start">ARTS</h3>
           </button>
           {/* not on mobile */}
           <h3 className="pb-3 font-bold block sm:hidden">ARTS</h3>
@@ -128,9 +128,9 @@ function Footer({ logoRef }) {
           {/* on mobile */}
           <button
             onClick={() => toggleSection("lifestyle")}
-            className="sm:block hidden" type="button"
+            className="sm:block hidden sm:w-full " type="button"
           >
-            <h3 className="pb-3 font-bold block">LIFESTYLE</h3>
+            <h3 className="pb-3 font-bold block sm:text-start">LIFESTYLE</h3>
           </button>
           {/* not on mobile */}
           <h3 className="pb-3 font-bold block sm:hidden">LIFESTYLE</h3>
