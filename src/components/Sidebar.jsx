@@ -15,7 +15,7 @@ const Sidebar = () => {
               <div>
                 {article["media:content"] && (
                   <img width="330" height="250" loading="lazy"
-                    className="w-full max-h-[250px] lg:max-h-[500px] object-cover "
+                    className="w-full max-h-[250px] lg:max-h-[500px]  "
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}
                   />
@@ -24,14 +24,14 @@ const Sidebar = () => {
             </Link>
 
             <div>
-              <Link to="/Article" state={{ data: article }}>
-                <h2 className="text-2xl  py-3 hover:text-gray-600">
+              <Link to="/article" state={{ data: article }}>
+                <h2 className="text-2xl py-3 hover:text-gray-600">
                   {article.title}
                 </h2>
                 <p className="text-sm pb-3">{article.description}</p>
               </Link>
             </div>
-            <div className=" pt-4 border-t   pb-3 border-b border-black">
+            <div className=" pt-4 border-t pb-3 border-b border-black">
               <div className="w-[100%] h-[100%] ">
                 <Carousel article={article}></Carousel>
               </div>
@@ -41,12 +41,12 @@ const Sidebar = () => {
       </div>
 
       {/*       OPINION SECTION   */}
-      <div className="ml-3 md:ml-0 sm:ml-0 lg:ml-0 md:px-0  mb-2">
-        <h2 className="py-3  font-bold">Opinion</h2>
+      <div className="ml-3 md:ml-0 sm:ml-0 lg:ml-0 md:px-0 mb-2">
+        <h2 className="py-3 font-bold">Opinion</h2>
         <div className=" lg:grid lg:grid-cols-2 ">
           {sideArticles.slice(5, 15).map((article, index) => (
             <div
-              className="flex lg:flex  lg:border-r   lg:even:border-r-0 lg:odd:pr-2 lg:even:pl-2 border-black"
+              className="flex lg:flex  lg:border-r  lg:even:border-r-0 lg:odd:pr-2 lg:even:pl-2 border-black"
               key={index}
             >
               <div
@@ -60,7 +60,7 @@ const Sidebar = () => {
                 {article["dc:creator"] && (
                   <span className="block pb-2">{article["dc:creator"]}</span>
                 )}
-                <Link to="/Article" state={{ data: article }}>
+                <Link to="/article" state={{ data: article }}>
                   <h3 className="text-[20px] leading-none hover:text-gray-600 ">
                     {article.title}
                   </h3>
