@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "./Carousel";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {

@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import React from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import noImage from "../images/no-image.png";
+import noImage from "../images/no-image.webp";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -38,7 +38,7 @@ function Carousel() {
       {/* Previous Button */}
       <div className="flex justify-center mt-4">
         <button
-          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full mr-2" alt="click to slide left"
+          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full mr-2" aria-label="click to slide left"
           onClick={() => sliderRef.current?.slickPrev()} // Call slickPrev to go to the previous slide
         >
           <FaArrowAltCircleLeft />
@@ -46,7 +46,7 @@ function Carousel() {
 
         {/* Next Button */}
         <button
-          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full" alt="click to slide right"
+          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full" aria-label="click to slide right"
           onClick={() => sliderRef.current?.slickNext()} // Call slickNext to go to the next slide
         >
           <FaArrowAltCircleRight />

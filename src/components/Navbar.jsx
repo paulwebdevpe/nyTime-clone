@@ -1,10 +1,10 @@
 import { React, useState } from "react";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 import arrow from "../images/arrowDown.svg";
 import { Link, useNavigate } from "react-router-dom";
 import SearchInput from "./SearchInput";
 import { auth } from "../firebase/setup";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { signOut } from "firebase/auth";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -62,16 +62,16 @@ function Navbar({
       <header className="my-3">
         {!hideSearchAndLogin && (
           <div className="flex justify-between	relative ">
-            <div className="">
+            <div >
               {/* ICONS  */}
               <div className="lg:hidden md:hidden sm:hidden">
                 <SearchInput showImg={true}></SearchInput>
               </div>
-              <div className="">
+              <div >
                 <button
                   onClick={handleMenuToggle}
                   className="hidden lg:block md:block sm:block"
-                  type="button"
+                  type="button" aria-label="Toggle menu"
                 >
                   <GiHamburgerMenu className="text-2xl" />
                 </button>
@@ -103,7 +103,7 @@ function Navbar({
                     <span>{auth.currentUser.email}</span>
                     <button
                       onClick={() => setOpenAccountMenu(!openAccountMenu)}
-                      type="button"
+                      type="button" aria-label="Toggle menu"
                     >
                       <MdCancel className="text-2xl   ml-auto" />
                     </button>
@@ -214,7 +214,7 @@ function Navbar({
           sm:absolute sm:top-0 sm:left-0 sm:right-0 sm:bg-white sm:p-4`}
         >
           <ul className="space-y-2 ">
-            <button onClick={handleMenuToggle}>
+            <button onClick={handleMenuToggle} type="button" aria-label="Toggle menu">
               <MdCancel className="text-2xl " />
             </button>
             <div className="">

@@ -5,10 +5,10 @@ import {
 } from "firebase/auth";
 import React, { useState } from "react";
 import { auth, googleProvider } from "../firebase/setup";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 import { FaGoogle } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {

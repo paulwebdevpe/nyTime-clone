@@ -102,7 +102,10 @@ export const Main = ({}) => {
     };
     fetchData();
   }, [dispatch]);
-
+  
+ const articles = useSelector((state) => state.navigation.articles);
+  console.log(articles);
+    
   // loading screen
   if (isLoading)
     return (
@@ -111,6 +114,7 @@ export const Main = ({}) => {
       </div>
     );
     
+ 
   return (
     <div className="max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
       <Navbar logoRef={logoRef} onMenuToggle={setIsMenuOpen}></Navbar>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import noImage from "../images/no-image.png";
+import noImage from "../images/no-image.webp";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 import formattedDate from "../utils/formattedDate";
 
 function Section() {

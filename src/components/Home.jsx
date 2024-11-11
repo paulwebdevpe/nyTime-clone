@@ -36,9 +36,9 @@ const Home = ({ artStart, artEnd, imgArt }) => {
               article.multimedia &&
               article.multimedia.length > 0 && (
                 <Link to="/article" state={{ data: article }}>
-                  <img
-                    className="h-full w-full object-cover"
-                    src={article.multimedia[1].url}
+                  <img loading="lazy"
+                    className="h-full w-full object-cover "
+                    src={article.multimedia[1].url }
                     alt={article.multimedia[1].caption || "Article Image"}
                   />
                 </Link>

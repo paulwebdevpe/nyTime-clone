@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { setSearchArticles } from "../redux/navigationSlice";
@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import formattedDate from "../utils/formattedDate";
 import Navbar from "../components/Navbar";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 function SearchPage() {
   const location = useLocation();
   const dispatch = useDispatch();

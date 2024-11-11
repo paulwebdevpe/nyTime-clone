@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 import { Link } from "react-router-dom";
 
 function Footer({ logoRef }) {

@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import { Link, Navigate } from "react-router-dom";
-import logo from "../images/newyork.png";
+import { Link } from "react-router-dom";
+import logo from "../images/newyork.webp";
 import { auth, db } from "../firebase/setup";
 import { doc, getDoc } from "firebase/firestore";
 import { MdCancel } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import {
   updateNameProfile,
   deleteArticle,
   deleteUserAccount,
 } from "../utils/firebaseActions";
-import { useNavigate } from "react-router-dom";
+
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -131,7 +132,7 @@ const Profile = () => {
                   <button
                     onClick={() => setNameInput(!nameInput)}
                     className="bg-gray-800 w-32 mb-3 rounded-lg h-10 text-white hover:bg-gray-700"
-                    alt="click to update name"
+                    
                   >
                     Update
                   </button>
@@ -142,7 +143,7 @@ const Profile = () => {
                       }
                       className="bg-gray-800 w-32 rounded-lg h-10 text-white hover:bg-gray-700"
                       type="submit"
-                      alt="click to change name"
+                      
                     >
                       Change Name
                     </button>
@@ -162,7 +163,6 @@ const Profile = () => {
                     <button
                       onClick={() => setShowArticles(!showArticles)}
                       className="bg-gray-800 w-32 rounded-lg h-10 text-white hover:bg-gray-700"
-                      alt="click to show articles "
                     >
                       View All
                     </button>
@@ -185,7 +185,7 @@ const Profile = () => {
                                 onClick={() =>
                                   deleteArticle(article, setDataArticles)
                                 }
-                                alt="delete article"
+                                aria-label="delete article"
                               >
                                 <MdCancel className="text-2xl hover:scale-150" />
                               </button>
@@ -226,7 +226,7 @@ const Profile = () => {
                       onClick={() => deleteUserAccount(navigate)}
                       className="bg-gray-800 w-32 rounded-lg h-10 text-white hover:bg-gray-700"
                       type="button"
-                      alt="click to confirm account deletion"
+                      aria-label="click to confirm account deletion"
                     >
                       Yes
                     </button>
@@ -237,7 +237,6 @@ const Profile = () => {
                     onClick={() => setDeleteUserMessage(!deleteUserMessage)}
                     className="bg-gray-800 w-32 mb-3 rounded-lg h-10 text-white hover:bg-gray-700"
                     type="button"
-                    alt="click to delete account"
                   >
                     Delete
                   </button>

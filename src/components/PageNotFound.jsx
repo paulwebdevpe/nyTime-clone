@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 function PageNotFound() {
   return (
     <div className="min-h-screen flex flex-col">

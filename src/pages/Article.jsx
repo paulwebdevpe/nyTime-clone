@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import logo from "../images/newyork.png";
+import logo from "../images/newyork.webp";
 import { auth, db } from "../firebase/setup";
-import { setDoc, doc, getDoc, arrayUnion } from "firebase/firestore";
+import { setDoc, doc, arrayUnion } from "firebase/firestore";
 import { CiBookmark } from "react-icons/ci";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import { FaBookmark } from "react-icons/fa";
 import formattedDate from "../utils/formattedDate";
 function Article() {
@@ -118,7 +118,7 @@ function Article() {
             )}
             <button
               onClick={() => saveArticle(article)}
-              className="text-3xl pt-3"
+              className="text-3xl pt-3" aria-label="Save article"
             >
               {saved ? <FaBookmark /> : <CiBookmark />}
             </button>
