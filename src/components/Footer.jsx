@@ -33,55 +33,66 @@ function Footer({ logoRef }) {
           {/* on mobile */}
           <button
             onClick={() => toggleSection("news")}
-            className="sm:block hidden sm:w-full" type="button"
+            className="sm:block hidden sm:w-full"
+            type="button"
           >
             <h3 className="pb-3 font-bold block sm:text-start">NEWS</h3>
           </button>
           {/* not on mobile */}
           <h3 className="pb-3 font-bold block sm:hidden">NEWS</h3>
           <ul className={visibleSections.news ? "sm:block" : "sm:hidden "}>
-            <Link to="/" onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2 ">
+            <li className="hover:underline sm:py-2 sm:border-b-2 ">
+              <Link to="/" onClick={handleScrollToLogo}>
                 Home Page
-              </li>
-            </Link>
-            <Link to={`/us`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">U.S </li>
-            </Link>
-            <Link to={`/world`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">World</li>
-            </Link>
-            <Link to={`/politics`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/us`} onClick={handleScrollToLogo}>
+                U.S
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/world`} onClick={handleScrollToLogo}>
+                World{" "}
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/politics`} onClick={handleScrollToLogo}>
                 Politics
-              </li>
-            </Link>
-            <Link to={`/nyregion`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/nyregion`} onClick={handleScrollToLogo}>
                 New York
-              </li>
-            </Link>
-            <Link to={`/Education`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">
+              </Link>
+            </li>
+
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/Education`} onClick={handleScrollToLogo}>
                 Education
-              </li>
-            </Link>
-            <Link to={`/business`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/business`} onClick={handleScrollToLogo}>
                 Business
-              </li>
-            </Link>
-            <Link to={`/Technology`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Tech</li>
-            </Link>
-            <Link to={`/science`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Science</li>
-            </Link>
-            <Link to={`/obituaries`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">
-                Obituaries
-              </li>
-            </Link>
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/Technology`} onClick={handleScrollToLogo}>
+                Tech
+              </Link>
+            </li>
+
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/science`} onClick={handleScrollToLogo}>
+                Science
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/obituaries`} onClick={handleScrollToLogo}>
+                Obituaries{" "}
+              </Link>
+            </li>
           </ul>
         </section>
 
@@ -89,72 +100,97 @@ function Footer({ logoRef }) {
           {/* on mobile */}
           <button
             onClick={() => toggleSection("arts")}
-            className="sm:block hidden sm:w-full" type="button"
+            className="sm:block hidden sm:w-full"
+            type="button"
           >
             <h3 className="pb-3 font-bold block sm:text-start">ARTS</h3>
           </button>
           {/* not on mobile */}
           <h3 className="pb-3 font-bold block sm:hidden">ARTS</h3>
           <ul className={visibleSections.arts ? "sm:block" : "sm:hidden "}>
-            <Link
-              to={`/arts/subSection/SundayBookReview`}
-              onClick={handleScrollToLogo}
-            >
-              <li className="hover:underline sm:py-2 sm:border-b-2">Books</li>
-            </Link>
-            <Link to={`/arts/subSection/Dance`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Dance</li>
-            </Link>
-            <Link to={`/arts/subSection/Movies`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Movies</li>
-            </Link>
-            <Link to={`/arts/subSection/Music`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Music</li>
-            </Link>
-            <Link
-              to={`/arts/subSection/Television`}
-              onClick={handleScrollToLogo}
-            >
-              <li className="hover:underline sm:py-2 sm:border-b-2">
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link
+                to={`/arts/subSection/SundayBookReview`}
+                onClick={handleScrollToLogo}
+              >
+                Books
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/arts/subSection/Dance`} onClick={handleScrollToLogo}>
+                Dance
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/arts/subSection/Movies`} onClick={handleScrollToLogo}>
+                Movies
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/arts/subSection/Music`} onClick={handleScrollToLogo}>
+                Music
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link
+                to={`/arts/subSection/Television`}
+                onClick={handleScrollToLogo}
+              >
                 Television
-              </li>
-            </Link>
-            <Link to={`/arts/subSection/Theater`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Theater</li>
-            </Link>
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link
+                to={`/arts/subSection/Theater`}
+                onClick={handleScrollToLogo}
+              >
+                Theater
+              </Link>
+            </li>
           </ul>
         </section>
         <section className="w-4/12 sm:w-full sm:mb-3 sm:border-b-2 sm:border-black">
           {/* on mobile */}
           <button
             onClick={() => toggleSection("lifestyle")}
-            className="sm:block hidden sm:w-full " type="button"
+            className="sm:block hidden sm:w-full "
+            type="button"
           >
             <h3 className="pb-3 font-bold block sm:text-start">LIFESTYLE</h3>
           </button>
           {/* not on mobile */}
           <h3 className="pb-3 font-bold block sm:hidden">LIFESTYLE</h3>
           <ul className={visibleSections.lifestyle ? "sm:block" : "sm:hidden "}>
-            <Link to={`/health`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Health</li>
-            </Link>
-            <Link to={`/well`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Well</li>
-            </Link>
-            <Link to={`/food`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Food</li>
-            </Link>
-            <Link to={`/travel`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Travel</li>
-            </Link>
-            <Link to={`/fashion`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">Fashion</li>
-            </Link>
-            <Link to={`/t-magazine`} onClick={handleScrollToLogo}>
-              <li className="hover:underline sm:py-2 sm:border-b-2">
-                T Magazine
-              </li>
-            </Link>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/health`} onClick={handleScrollToLogo}>
+                Health
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/well`} onClick={handleScrollToLogo}>
+                Well
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/food`} onClick={handleScrollToLogo}>
+                Food
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/travel`} onClick={handleScrollToLogo}>
+                Travel
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/fashion`} onClick={handleScrollToLogo}>
+                Fashion
+              </Link>
+            </li>
+            <li className="hover:underline sm:py-2 sm:border-b-2">
+              <Link to={`/t-magazine`} onClick={handleScrollToLogo}>
+                T Magazine{" "}
+              </Link>
+            </li>
           </ul>
         </section>
       </div>

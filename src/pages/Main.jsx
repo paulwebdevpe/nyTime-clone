@@ -23,6 +23,7 @@ export const Main = ({}) => {
   useEffect(() => {
     // If the scroll position exceeds the threshold of 300 pixels, the navbar is shown; otherwise, it is hidden.
     const handleScroll = () => {
+      
       if (window.scrollY > 300) {
         // Adjust this value to set the scroll threshold
         setShowNavbar(true);
