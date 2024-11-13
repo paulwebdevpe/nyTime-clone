@@ -33,7 +33,7 @@ function Footer({ logoRef }) {
             alt="logo image"
           />
         </Link>
-        <a className="ml-3 sm:mt-3" href="https://developer.nytimes.com/" target="_blank">
+        <a className="ml-3 sm:mt-3 sm:ml-0" href="https://developer.nytimes.com/" target="_blank">
           <img src={apiLogo} alt="logo api new york times" />
         </a>
       </div>
