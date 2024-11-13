@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Article from "./pages/Article";
 import Login from "./pages/Login";
 import PageNotFound from "./components/PageNotFound";
 import Section from "./pages/Section";
@@ -30,7 +29,6 @@ export const router = createBrowserRouter([
           },
         ],
       },
-      { path: "article", element: <Article /> },
       { path: "login", element: <Login /> },
       { path: "search", element: <Search /> },
       { path: "profile", element: <Profile /> },

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from "../images/newyork.webp";
+import logo from "../images/logo.webp";
 import { Link } from "react-router-dom";
-
+import apiLogo from "../images/ny-logo.webp";
 function Footer({ logoRef }) {
   const handleScrollToLogo = () => {
     if (logoRef.current) {
@@ -23,10 +23,19 @@ function Footer({ logoRef }) {
   };
   return (
     <footer>
-      <div className="pt-3 border-t border-black max-w-[1200px]">
+      <div className="pt-3 border-t border-black max-w-[1200px] flex items-center justify-center w-full sm:flex-col">
         <Link to="/" onClick={handleScrollToLogo}>
-          <img className="w-[184px] h-[25px]" src={logo} alt="logo image" />
+          <img
+            width="250"
+            height="60"
+            className="w-[250px] h-[55px] object-cover "
+            src={logo}
+            alt="logo image"
+          />
         </Link>
+        <a className="ml-3 sm:mt-3" href="https://developer.nytimes.com/">
+          <img src={apiLogo} alt="logo api new york times" />
+        </a>
       </div>
       <div className="flex py-5 sm:flex sm:flex-col">
         <section className="w-4/12 sm:w-full sm:mb-3 sm:border-b-2 sm:border-black">
@@ -193,6 +202,24 @@ function Footer({ logoRef }) {
             </li>
           </ul>
         </section>
+      </div>
+      <div className="bg-gray-100 text-center text-sm text-black py-4 border-t border-black">
+        <p>&copy; 2024 The New York Times. All rights reserved.</p>
+        <p>
+          News provided by
+          <a
+            href="https://www.nytimes.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline font-bold pl-2 "
+          >
+            The New York Times
+          </a>
+        </p>
+        <p className="text-black italic mt-2">
+          This website is a learning project and is not affiliated with The New
+          York Times.
+        </p>
       </div>
     </footer>
   );

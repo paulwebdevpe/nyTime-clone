@@ -10,7 +10,7 @@ const Home = ({ artStart, artEnd, imgArt }) => {
       <ul className="w-[40%] md:w-full sm:w-full sm:order-last md:order-last">
         {articles?.slice(artStart, artEnd).map((article, index) => (
           <li className="flex " key={index}>
-            <Link to="/article" state={{ data: article }}>
+            <a href={article.url}>
               <div>
                 <h2 className="text-lg font-semibold md:w-full hover:text-gray-600 sm:text-[20px]">
                   {article.title}
@@ -23,9 +23,10 @@ const Home = ({ artStart, artEnd, imgArt }) => {
                   }
                 >
                   {article.abstract}
+                  <span className="block font-semibold">Read more on NYTimes.com</span>
                 </p>
               </div>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
@@ -36,9 +37,12 @@ const Home = ({ artStart, artEnd, imgArt }) => {
               article.multimedia &&
               article.multimedia.length > 0 && (
                 <Link to="/article" state={{ data: article }}>
-                  <img width="460" height="310" loading="lazy"
+                  <img
+                    width="460"
+                    height="310"
+                    loading="lazy"
                     className="h-full w-full  object-cover"
-                    src={article.multimedia[1].url  }
+                    src={article.multimedia[1].url}
                     alt={article.multimedia[1].caption || "Article Image"}
                   />
                 </Link>

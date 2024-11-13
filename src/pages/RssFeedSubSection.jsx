@@ -5,7 +5,7 @@ import xml2js from "xml2js"; // Import XML to JSON converter
 import noImage from "../images/no-image.webp";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import logo from "../images/newyork.webp";
+import logo from "../images/logo.webp";
 import formattedDate from "../utils/formattedDate";
 
 function RssFeedSubSection() {
@@ -51,10 +51,10 @@ function RssFeedSubSection() {
   return (
     <>
       <div className=" w-full border-b border-black ">
-        <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
+        <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 w ">
           <Navbar hideLogoAndDate={true} hideLinks={true}>
             <Link to="/">
-              <img className="max-h-8 " src={logo} alt="Logo image" />{" "}
+              <img className="max-h-12 " src={logo} alt="Logo image" />{" "}
             </Link>
           </Navbar>
         </div>
@@ -80,8 +80,8 @@ function RssFeedSubSection() {
                   key={index}
                 >
                   <div>
-                    <Link to="/Article" state={{ data: article }}>
-                      {article["media:content"] ?  (
+                    <a href={article.link}>
+                      {article["media:content"] ? (
                         <img
                           className=" w-full   max-h-[540px] "
                           src={article["media:content"]?.$?.url}
@@ -91,20 +91,18 @@ function RssFeedSubSection() {
                         <img
                           className="w-full max-h-[420px] "
                           src={noImage}
-                          alt={
-                            article.description || "Article Image"
-                          }
+                          alt={article.description || "Article Image"}
                         />
                       )}
-                    </Link>
+                    </a>
                   </div>
 
                   <div>
-                    <Link to="/Article" state={{ data: article }}>
+                    <a href={article.link}>
                       <h2 className="py-2 text-2xl hover:text-gray-600">
                         {article.title}
                       </h2>
-                    </Link>
+                    </a>
                     <p className="text-sm pb-3">{article.description}</p>
                   </div>
                 </div>
@@ -115,10 +113,9 @@ function RssFeedSubSection() {
             {side?.length !== 0 &&
               side?.slice(2, 4).map((article, index) => (
                 <div key={index}>
-                  <Link to="/Article" state={{ data: article }}>
+                  <a href={article.link}>
                     <div>
-                      {article["media:content"] 
-                      ? (
+                      {article["media:content"] ? (
                         <img
                           className=" w-full  max-h-56 sm:max-h-80"
                           src={article["media:content"]?.$?.url}
@@ -132,13 +129,13 @@ function RssFeedSubSection() {
                         />
                       )}
                     </div>
-                  </Link>
+                  </a>
                   <div>
-                    <Link to="/Article" state={{ data: article }}>
+                    <a href={article.link}>
                       <h2 className="text-2xl pb-3 hover:text-gray-600">
                         {article.title}
                       </h2>
-                    </Link>
+                    </a>
                     <p className="text-sm pb-3">{article.description}</p>
                   </div>
                 </div>
@@ -151,9 +148,9 @@ function RssFeedSubSection() {
             {side?.length !== 0 &&
               side?.slice(4, 9).map((article, index) => (
                 <div className=" " key={index}>
-                  <Link to="/Article" state={{ data: article }}>
+                  <a href={article.link}>
                     <div>
-                      {article["media:content"]  ? (
+                      {article["media:content"] ? (
                         <img
                           className=" w-full max-h-56 sm:max-h-80"
                           src={article["media:content"]?.$?.url}
@@ -168,13 +165,13 @@ function RssFeedSubSection() {
                         />
                       )}
                     </div>
-                  </Link>
+                  </a>
                   <div>
-                    <Link to="/Article" state={{ data: article }}>
+                    <a href={article.link}>
                       <h2 className="text-2xl pb-3 hover:text-gray-600">
                         {article.title}
                       </h2>
-                    </Link>
+                    </a>
                     <p className="text-sm pb-3">{article.description}</p>
                   </div>
                 </div>
@@ -198,7 +195,7 @@ function RssFeedSubSection() {
                   </div>
 
                   <div className="w-[80%] text-left py-3  sm:w-full border-t border-black  float-left">
-                    <Link to="/Article" state={{ data: article }}>
+                    <a href={article.link}>
                       {article["media:content"] ? (
                         <img
                           className="max-h-40 sm:max-h-28 float-right right-0  ml-2 mb-2"
@@ -210,15 +207,13 @@ function RssFeedSubSection() {
                         <img
                           className="max-h-40 sm:max-h-28 float-right right-0  ml-2 mb-2"
                           src={noImage}
-                          alt={
-                            article.description|| "Article Image"
-                          }
+                          alt={article.description || "Article Image"}
                         />
                       )}
                       <h2 className="text-2xl pb-2 sm:text-xl pr-4 hover:text-gray-600">
                         {article.title}
                       </h2>
-                    </Link>
+                    </a>
                     <p className="text-sm pr-4">{article.description}</p>
                   </div>
                 </div>

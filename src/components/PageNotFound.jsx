@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import logo from "../images/newyork.webp";
+import logo from "../images/logo.webp";
 function PageNotFound() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -9,7 +9,7 @@ function PageNotFound() {
         <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
           <Navbar hideLogoAndDate={true} hideLinks={true}>
             <Link to="/">
-              <img className="max-h-8 " src={logo} alt="Logo image" />
+              <img className="max-h-12 " width="220" src={logo} alt="Logo image" />
             </Link>
           </Navbar>
         </div>

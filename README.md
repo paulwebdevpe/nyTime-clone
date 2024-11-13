@@ -1,4 +1,9 @@
-# Progetto New York Times Clone
+# Attenzione!
+Per problemi di copyright ho dovuto modificare il nome del sito.
+Il nuovo sito e  
+Grazie!
+
+## Progetto New York Times Clone 
 
 Questo è un progetto basato su React che recupera articoli di notizie dall'API del New York Times e li visualizza agli utenti. Include funzionalità come il salvataggio degli articoli, l'aggiornamento del profilo utente e la gestione dell'autenticazione degli utenti tramite Firebase.
 

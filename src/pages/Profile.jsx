@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import logo from "../images/newyork.webp";
+import logo from "../images/logo.webp";
 import { auth, db } from "../firebase/setup";
 import { doc, getDoc } from "firebase/firestore";
 import { MdCancel } from "react-icons/md";
@@ -12,10 +12,9 @@ import {
   deleteUserAccount,
 } from "../utils/firebaseActions";
 
-
 const Profile = () => {
   const navigate = useNavigate();
-  
+
   const [nameInput, setNameInput] = useState("");
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -28,7 +27,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       const user = auth.currentUser;
-      if (user ) {
+      if (user) {
         try {
           // Fetch user data from Firestore
           const userDocRef = doc(db, "Users", user.uid); // Reference to the user's document in Firestore
@@ -44,7 +43,7 @@ const Profile = () => {
             console.log("No such document!");
           }
         } catch (error) {
-          console.error("Error fetching user data: ", error); 
+          console.error("Error fetching user data: ", error);
         } finally {
           setLoading(false); // Stop showing the spinner
         }
@@ -70,7 +69,12 @@ const Profile = () => {
         <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
           <Navbar hideLogoAndDate={true} hideLinks={true}>
             <Link to="/">
-              <img className="max-h-8  px-2 " src={logo} alt="Logo image" />
+              <img
+                className="max-h-12  px-2 "
+                width="220"
+                src={logo}
+                alt="Logo image"
+              />
             </Link>
           </Navbar>
         </div>
@@ -132,7 +136,6 @@ const Profile = () => {
                   <button
                     onClick={() => setNameInput(!nameInput)}
                     className="bg-gray-800 w-32 mb-3 rounded-lg h-10 text-white hover:bg-gray-700"
-                    
                   >
                     Update
                   </button>
@@ -143,75 +146,13 @@ const Profile = () => {
                       }
                       className="bg-gray-800 w-32 rounded-lg h-10 text-white hover:bg-gray-700"
                       type="submit"
-                      
                     >
                       Change Name
                     </button>
                   )}
                 </div>
               </li>
-              {/*    SAVED ARTICLES */}
-              <li className="py-5 border-t border-black  justify-between">
-                <div className="flex justify-between">
-                  <div className="pr-2">
-                    <span>Saved Articles</span>
-                    <p className="text-gray-800">
-                      Save articles that you want to read later.
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      onClick={() => setShowArticles(!showArticles)}
-                      className="bg-gray-800 w-32 rounded-lg h-10 text-white hover:bg-gray-700"
-                    >
-                      View All
-                    </button>
-                  </div>
-                </div>
 
-                {showArticles && (
-                  <ul>
-                    {dataArticles && dataArticles.length > 0 ? (
-                      dataArticles
-                        .slice()
-                        .reverse()
-                        .map((article, index) => (
-                          <li
-                            key={index}
-                            className="py-2  border-t border-black flex justify-between"
-                          >
-                            <div className="flex items-center">
-                              <button
-                                onClick={() =>
-                                  deleteArticle(article, setDataArticles)
-                                }
-                                aria-label="delete article"
-                              >
-                                <MdCancel className="text-2xl hover:scale-150" />
-                              </button>
-                              <Link to="/article" state={{ data: article }}>
-                                <div className="flex items-center">
-                                  <p className="text-gray-800 w-3/4 ml-6 hover:underline">
-                                    {article.title}
-                                  </p>
-                                  <img
-                                    className="w-1/4"
-                                    src={article.img}
-                                    alt="image article"
-                                  />
-                                </div>
-                              </Link>
-                            </div>
-                          </li>
-                        ))
-                    ) : (
-                      <p className="text-gray-800 text-center py-4">
-                        No articles saved.
-                      </p>
-                    )}
-                  </ul>
-                )}
-              </li>
               {/*  DELETE ACCOUNT */}
               <li className="py-5 border-t border-black flex justify-between ">
                 <div>
@@ -245,7 +186,6 @@ const Profile = () => {
             </ul>
           </div>
         ) : (
-          
           <div>
             <p className="text-center text-5xl pt-8 font-bold">
               Log in to see your profile.

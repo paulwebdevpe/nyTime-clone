@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "./Carousel";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const sideArticles = useSelector((state) => state.navigation.sideArticles);
@@ -11,25 +10,25 @@ const Sidebar = () => {
       <div className="pt-3 ml-3 md:ml-0 sm:ml-0 lg:mx-0 border-t border-black ">
         {sideArticles?.slice(0, 1).map((article, index) => (
           <div key={index}>
-            <Link to="/Article" state={{ data: article }}>
+            <a href={article.link}>
               <div>
                 {article["media:content"] && (
-                  <img width="330" height="250" loading="lazy"
+                  <img width="330" height="250" loading="lazy" 
                     className="w-full max-h-[250px] lg:max-h-[500px]  "
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}
                   />
                 )}
               </div>
-            </Link>
+            </a>
 
             <div>
-              <Link to="/article" state={{ data: article }}>
+              <a href={article.link}>
                 <h2 className="text-2xl py-3 hover:text-gray-600">
                   {article.title}
                 </h2>
                 <p className="text-sm pb-3">{article.description}</p>
-              </Link>
+              </a>
             </div>
             <div className=" pt-4 border-t pb-3 border-b border-black">
               <div className="w-[100%] h-[100%] ">
@@ -60,11 +59,11 @@ const Sidebar = () => {
                 {article["dc:creator"] && (
                   <span className="block pb-2">{article["dc:creator"]}</span>
                 )}
-                <Link to="/article" state={{ data: article }}>
+                <a href={article.link}>
                   <h3 className="text-[20px] leading-none hover:text-gray-600 ">
                     {article.title}
                   </h3>
-                </Link>
+                </a>
               </div>
 
               <div
@@ -75,7 +74,7 @@ const Sidebar = () => {
                 }
               >
                 {article["media:content"] && (
-                  <img width="100" height="150" loading="lazy"    
+                  <img width="100" height="150" loading="lazy" 
                     className="h-full w-full py-4 object-cover"
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}

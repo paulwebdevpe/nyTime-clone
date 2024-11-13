@@ -4,12 +4,11 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import noImage from "../images/no-image.webp";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 
 function Carousel() {
   const sideArticles = useSelector((state) => state.navigation.sideArticles);
   const sliderRef = useRef(null); // Create a ref for the Slider component
-
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -22,16 +21,16 @@ function Carousel() {
       <Slider ref={sliderRef} {...settings}>
         {sideArticles?.slice(1, 5).map((sideArticle, index) => (
           <div key={index} className={`${index % 2 === 0 ? "pr-2" : "pl-2"} `}>
-            <Link to="/Article" state={{ data: sideArticle }}>
-              <img
+            
+             <a href={sideArticle.link}> <img
                 src={sideArticle["media:content"]?.$.url || noImage}
                 alt="Article"
                 className="w-full "
               />
               <h3 className="text-lg   text-center mt-2 hover:text-gray-600">
                 {sideArticle.title || "Untitled"}
-              </h3>
-            </Link>
+              </h3></a>
+        
           </div>
         ))}
       </Slider>

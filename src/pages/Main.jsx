@@ -45,7 +45,8 @@ export const Main = ({}) => {
         `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`
       );
       const data = response?.data?.results;
-      dispatch(setArticles(data));
+      const slicedData = data.slice(0, 12);
+      dispatch(setArticles(slicedData));
     } catch (error) {
       console.error("Error fetching home articles:", error);
     }
@@ -68,7 +69,9 @@ export const Main = ({}) => {
         );
       });
       const articles = parsedData?.rss?.channel?.item || [];
-      dispatch(setSideArticles(articles));
+      const sliceArticles = articles.slice(0, 15);  // Get the first 30 articles
+
+      dispatch(setSideArticles(sliceArticles));
     } catch (error) {
       console.error("Error parsing XML:", error);
     }
@@ -85,6 +88,7 @@ export const Main = ({}) => {
         const response = await axios.get(
           `https://api.nytimes.com/svc/topstories/v2/${section.name}.json?api-key=${apiKey}`
         );
+        
         dispatch(section.action(response?.data?.results));
       };
       await Promise.all(sections.map(fetchSectionData));
@@ -102,17 +106,12 @@ export const Main = ({}) => {
     fetchData();
   }, [dispatch]);
   
- const articles = useSelector((state) => state.navigation.articles);
-  console.log(articles);
-    
- 
- 
   return (
-    <div className="max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
+    <div className="max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 pt-2">
       <Navbar logoRef={logoRef} onMenuToggle={setIsMenuOpen}></Navbar>
       {/* // when scroll down, show the navbar */}
       <div
-        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 pt-2 ${
           showNavbar ? "-translate-y-3" : "-translate-y-full"
         }`}
       >

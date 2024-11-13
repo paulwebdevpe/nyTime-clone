@@ -6,7 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import formattedDate from "../utils/formattedDate";
 import Navbar from "../components/Navbar";
-import logo from "../images/newyork.webp";
+import logo from "../images/logo.webp";
+import Footer from "../components/Footer";
 function SearchPage() {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ function SearchPage() {
 
   const searchArticle = useSelector((state) => state.navigation.searchArticles);
   const sectionSearch = location?.state?.data;
+  console.log(searchArticle);
+  
 
   useEffect(() => {
     const fetchSearchArticle = async () => {
@@ -39,7 +42,7 @@ console.log( searchArticle
         <div className=" max-w-[1200px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3 ">
           <Navbar hideLogoAndDate={true} hideLinks={true}>
             <Link to="/">
-              <img className="max-h-8 px-2" src={logo} alt="Logo image" />
+              <img className="max-h-12 px-2" src={logo} alt="Logo image" />
             </Link>
           </Navbar>
         </div>
@@ -63,18 +66,20 @@ console.log( searchArticle
                   />
                 )}
 
-                <Link to="/article" state={{ data: article }}>
+               <a href={article.web_url}>
                   <h1 className="text-2xl leading-none pb-2">
                     {article.headline.main}
                   </h1>
                   <p>{article.abstract}</p>
-                </Link>
+                </a>
               </div>
             </div>
           ))}
         </div>
-      </section>         
-
+      </section>   
+      <div className="mx-3"> <Footer />
+        </div>      
+     
     </div>
   );
 }

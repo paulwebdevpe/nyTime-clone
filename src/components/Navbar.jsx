@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import logo from "../images/newyork.webp";
 import arrow from "../images/arrowDown.svg";
 import { Link, useNavigate } from "react-router-dom";
 import SearchInput from "./SearchInput";
@@ -9,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { signOut } from "firebase/auth";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdCancel } from "react-icons/md";
-
+import logo from "../images/logo.webp";
 function Navbar({
   logoRef,
   onMenuToggle,
@@ -59,9 +58,9 @@ function Navbar({
   };
   return (
     <>
-      <header className="my-3">
+      <header>
         {!hideSearchAndLogin && (
-          <div className="flex justify-between	relative ">
+          <div className="flex justify-between items-center relative ">
             <div >
               {/* ICONS  */}
               <div className="lg:hidden md:hidden sm:hidden">
@@ -90,14 +89,14 @@ function Navbar({
             ) : (
               <Link
                 to="/login"
-                className="p-2 bg-blue-500 text-xs text-white  flex items-center justify-center rounded-lg"
+                className="p-2 bg-blue-500 text-xs text-white  flex items-center justify-center rounded-lg max-h-8"
               >
                 LOG IN
               </Link>
             )}
             {/* MENU ACCOUNT  */}
             {openAccountMenu && (
-              <div className=" bg-slate-800 absolute z-40 right-0 sm:w-full text-white">
+              <div className=" bg-slate-800 absolute z-40 right-0 top-0 sm:w-full text-white">
                 <ul className="   w-[350px] sm:w-full  max-h-full p-4">
                   <li className="border-b-2 py-3 border-white flex justify-between items-center">
                     <span>{auth.currentUser.email}</span>
@@ -129,10 +128,10 @@ function Navbar({
             {/* LOGO */}
             <div className="mx-auto sm:px-3 md:px-3 lg:px-3 ">
               <Link to="/" onClick={window.location.reload}>
-                <img
-                  className="max-h-[65px]  lg:pb-3 md:pb-3 sm:pb-3 "
+                <img width="400" height="150"
+                  className="max-h-[150px] w-[400px] lg:pb-3 md:pb-3 sm:pb-3 object-cover"
                   src={logo}
-                  alt="search logo"
+                  alt="logo image"
                 />
               </Link>
             </div>

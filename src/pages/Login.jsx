@@ -5,7 +5,7 @@ import {
 } from "firebase/auth";
 import React, { useState } from "react";
 import { auth, googleProvider } from "../firebase/setup";
-import logo from "../images/newyork.webp";
+import logo from "../images/logo.webp";
 import { FaGoogle } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
