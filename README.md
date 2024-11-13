@@ -1,15 +1,11 @@
 # Attenzione!
 Per problemi di copyright ho dovuto modificare il nome del sito.
-Il nuovo sito e  
+Il nuovo sito e https://cronachemoderne.netlify.app/ 
 Grazie!
 
 ## Progetto New York Times Clone 
 
 Questo è un progetto basato su React che recupera articoli di notizie dall'API del New York Times e li visualizza agli utenti. Include funzionalità come il salvataggio degli articoli, l'aggiornamento del profilo utente e la gestione dell'autenticazione degli utenti tramite Firebase.
-
-## Home Page 
-
-![Home-git](https://github.com/user-attachments/assets/610870ca-d495-4b78-b989-e44bc8c16d03)
 
 ## Caratteristiche
 - **Top Stories**: Visualizza le principali notizie dall'API del New York Times.
