@@ -1,5 +1,5 @@
 # Attenzione!
-Per problemi di copyright ho dovuto modificare il nome del sito.
+Per problemi di copyright ho dovuto modificare il sito.
 Il nuovo sito e https://cronachemoderne.netlify.app/ 
 Grazie!
 
