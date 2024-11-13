@@ -60,7 +60,7 @@ function Section() {
             {articles?.length != 0 &&
               articles?.slice(1, 2).map((article, index) => (
                 <div className="text-center	" key={index}>
-                  <a href={article.url}>
+                  <a href={article.url} target="_blank">
                     <div>
                       {article.multimedia && article.multimedia.length > 0 ? (
                         <img
@@ -91,8 +91,8 @@ function Section() {
           <div className="w-[30%] pl-5 border-l border-black lg:w-full lg:grid lg:grid-cols-3 md:w-full md:border-l-0 md:pl-0 md:border-t md:pt-3 sm:w-full sm:border-t sm:pt-3 sm:border-l-0 sm:pl-0 lg:gap-3 lg:border-l-0 lg:pl-0 lg:border-t lg:pt-3">
             {articles?.length != 0 &&
               articles?.slice(2, 5).map((article, index) => (
-                <div key={index} className=" ">
-                  <a href={article.url}>
+                <div key={index} >
+                  <a href={article.url} target="_blank">
                     <div
                       className={`flex md:flex-col sm:flex-col  ${
                         index != 0 &&
@@ -122,7 +122,7 @@ function Section() {
           {articles?.length != 0 &&
             articles?.slice(5, 13).map((article, index) => (
               <div key={index}>
-                <a href={article.url}>
+                <a href={article.url} target="_blank">
                   <div>
                     {article.multimedia && article.multimedia.length > 0 ? (
                       <img
@@ -165,7 +165,7 @@ function Section() {
                   </div>
 
                   <div className="w-[80%] text-left py-3  sm:w-full border-t border-black pl-2 float-left">
-                    <a href={article.url}>
+                    <a href={article.url} target="_blank">
                       {article.multimedia && article.multimedia.length > 0 ? (
                         <img
                           className="max-h-40 sm:max-h-28 float-right right-0 ml-2 mb-2"

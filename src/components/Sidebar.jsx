@@ -10,7 +10,7 @@ const Sidebar = () => {
       <div className="pt-3 ml-3 md:ml-0 sm:ml-0 lg:mx-0 border-t border-black ">
         {sideArticles?.slice(0, 1).map((article, index) => (
           <div key={index}>
-            <a href={article.link}>
+            <a href={article.link} target="_blank">
               <div>
                 {article["media:content"] && (
                   <img width="330" height="250" loading="lazy" 
@@ -23,7 +23,7 @@ const Sidebar = () => {
             </a>
 
             <div>
-              <a href={article.link}>
+              <a href={article.link} target="_blank">
                 <h2 className="text-2xl py-3 hover:text-gray-600">
                   {article.title}
                 </h2>
@@ -59,7 +59,7 @@ const Sidebar = () => {
                 {article["dc:creator"] && (
                   <span className="block pb-2">{article["dc:creator"]}</span>
                 )}
-                <a href={article.link}>
+                <a href={article.link} target="_blank">
                   <h3 className="text-[20px] leading-none hover:text-gray-600 ">
                     {article.title}
                   </h3>

@@ -10,7 +10,7 @@ const Home = ({ artStart, artEnd, imgArt }) => {
       <ul className="w-[40%] md:w-full sm:w-full sm:order-last md:order-last">
         {articles?.slice(artStart, artEnd).map((article, index) => (
           <li className="flex " key={index}>
-            <a href={article.url}>
+            <a href={article.url} target="_blank">
               <div>
                 <h2 className="text-lg font-semibold md:w-full hover:text-gray-600 sm:text-[20px]">
                   {article.title}
@@ -36,7 +36,7 @@ const Home = ({ artStart, artEnd, imgArt }) => {
             {index == imgArt &&
               article.multimedia &&
               article.multimedia.length > 0 && (
-               <a href={article.url}>
+               <a href={article.url} target="_blank">
                   <img
                     width="460"
                     height="310"

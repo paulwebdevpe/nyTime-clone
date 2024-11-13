@@ -80,7 +80,7 @@ function RssFeedSubSection() {
                   key={index}
                 >
                   <div>
-                    <a href={article.link}>
+                    <a href={article.link} target="_blank">
                       {article["media:content"] ? (
                         <img
                           className=" w-full   max-h-[540px] "
@@ -98,7 +98,7 @@ function RssFeedSubSection() {
                   </div>
 
                   <div>
-                    <a href={article.link}>
+                    <a href={article.link} target="_blank">
                       <h2 className="py-2 text-2xl hover:text-gray-600">
                         {article.title}
                       </h2>
@@ -113,7 +113,7 @@ function RssFeedSubSection() {
             {side?.length !== 0 &&
               side?.slice(2, 4).map((article, index) => (
                 <div key={index}>
-                  <a href={article.link}>
+                  <a href={article.link} target="_blank">
                     <div>
                       {article["media:content"] ? (
                         <img
@@ -131,7 +131,7 @@ function RssFeedSubSection() {
                     </div>
                   </a>
                   <div>
-                    <a href={article.link}>
+                    <a href={article.link} target="_blank">
                       <h2 className="text-2xl pb-3 hover:text-gray-600">
                         {article.title}
                       </h2>
@@ -148,7 +148,7 @@ function RssFeedSubSection() {
             {side?.length !== 0 &&
               side?.slice(4, 9).map((article, index) => (
                 <div className=" " key={index}>
-                  <a href={article.link}>
+                  <a href={article.link} target="_blank">
                     <div>
                       {article["media:content"] ? (
                         <img
@@ -167,7 +167,7 @@ function RssFeedSubSection() {
                     </div>
                   </a>
                   <div>
-                    <a href={article.link}>
+                    <a href={article.link} target="_blank">
                       <h2 className="text-2xl pb-3 hover:text-gray-600">
                         {article.title}
                       </h2>
@@ -195,7 +195,7 @@ function RssFeedSubSection() {
                   </div>
 
                   <div className="w-[80%] text-left py-3  sm:w-full border-t border-black  float-left">
-                    <a href={article.link}>
+                    <a href={article.link} target="_blank">
                       {article["media:content"] ? (
                         <img
                           className="max-h-40 sm:max-h-28 float-right right-0  ml-2 mb-2"

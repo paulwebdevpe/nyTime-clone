@@ -8,7 +8,7 @@ import { useRef } from "react";
 function Carousel() {
   const sideArticles = useSelector((state) => state.navigation.sideArticles);
   const sliderRef = useRef(null); // Create a ref for the Slider component
-  
+
   const settings = {
     dots: false,
     infinite: true,
@@ -21,23 +21,24 @@ function Carousel() {
       <Slider ref={sliderRef} {...settings}>
         {sideArticles?.slice(1, 5).map((sideArticle, index) => (
           <div key={index} className={`${index % 2 === 0 ? "pr-2" : "pl-2"} `}>
-            
-             <a href={sideArticle.link}> <img
+            <a href={sideArticle.link} target="_blank">
+              <img
                 src={sideArticle["media:content"]?.$.url || noImage}
                 alt="Article"
                 className="w-full "
               />
               <h3 className="text-lg   text-center mt-2 hover:text-gray-600">
                 {sideArticle.title || "Untitled"}
-              </h3></a>
-        
+              </h3>
+            </a>
           </div>
         ))}
       </Slider>
       {/* Previous Button */}
       <div className="flex justify-center mt-4">
         <button
-          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full mr-2" aria-label="click to slide left"
+          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full mr-2"
+          aria-label="click to slide left"
           onClick={() => sliderRef.current?.slickPrev()} // Call slickPrev to go to the previous slide
         >
           <FaArrowAltCircleLeft />
@@ -45,7 +46,8 @@ function Carousel() {
 
         {/* Next Button */}
         <button
-          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full" aria-label="click to slide right"
+          className="bg-gray-400 hover:bg-gray-700 text-white p-4 rounded-full"
+          aria-label="click to slide right"
           onClick={() => sliderRef.current?.slickNext()} // Call slickNext to go to the next slide
         >
           <FaArrowAltCircleRight />

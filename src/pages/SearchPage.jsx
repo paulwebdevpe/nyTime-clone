@@ -66,7 +66,7 @@ console.log( searchArticle
                   />
                 )}
 
-               <a href={article.web_url}>
+               <a href={article.web_url} target="_blank">
                   <h1 className="text-2xl leading-none pb-2">
                     {article.headline.main}
                   </h1>

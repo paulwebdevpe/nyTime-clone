@@ -17,7 +17,7 @@ function NewsFooter() {
               <div key={index} className="max-h-[360px] mb-3 basis-1/5 w-full">
                 {/* Render the image */}
                 <div>
-                  <a href={art?.url}>
+                  <a href={art?.url} target="_blank">
                     <img
                       loading="lazy"
                       src={art?.multimedia[1]?.url}
@@ -29,7 +29,11 @@ function NewsFooter() {
 
                 {/* Render 3 article titles below the image */}
                 {arts.slice(index, index + 3).map((article, subIndex) => (
-                  <a href={article?.url} key={`${index}-${subIndex}`}>
+                  <a
+                    href={article?.url}
+                    key={`${index}-${subIndex}`}
+                    target="_blank"
+                  >
                     <h4 className="text-sm py-1 hover:text-gray-600">
                       {article?.title}
                     </h4>
@@ -49,7 +53,7 @@ function NewsFooter() {
               <div key={index} className="  max-h-[360px] mb-3  w-full">
                 {/* Render the image */}
                 <div>
-                  <a href={art?.url}>
+                  <a href={art?.url} target="_blank">
                     <img
                       src={art?.multimedia[1]?.url}
                       loading="lazy"
@@ -62,7 +66,7 @@ function NewsFooter() {
                 {/* Render 3 article titles below the image */}
                 {well.slice(index, index + 3).map((article, index) => (
                   <div key={index}>
-                    <a href={article?.url}>
+                    <a href={article?.url} target="_blank">
                       <h4 className="text-sm py-1 hover:text-gray-600">
                         {article?.title}
                       </h4>
