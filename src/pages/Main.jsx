@@ -44,8 +44,8 @@ export const Main = ({}) => {
       const response = await axios.get(
         `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`
       );
-      const data = response?.data?.results;
-      const slicedData = data.slice(0, 12);
+      const fetchSideArticles = response?.data?.results;
+      const slicedData = fetchSideArticles.slice(0, 12);
       dispatch(setArticles(slicedData));
     } catch (error) {
       console.error("Error fetching home articles:", error);
@@ -88,8 +88,8 @@ export const Main = ({}) => {
         const response = await axios.get(
           `https://api.nytimes.com/svc/topstories/v2/${section.name}.json?api-key=${apiKey}`
         );
-        
-        dispatch(section.action(response?.data?.results));
+        const fetchSideArticles = response?.data?.results;
+        dispatch(section.action(fetchSideArticles));
       };
       await Promise.all(sections.map(fetchSectionData));
     } catch (error) {
