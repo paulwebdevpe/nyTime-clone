@@ -36,7 +36,7 @@ const Home = ({ artStart, artEnd, imgArt }) => {
             {index == imgArt &&
               article.multimedia &&
               article.multimedia.length > 0 && (
-                <Link to="/article" state={{ data: article }}>
+               <a href={article.url}>
                   <img
                     width="460"
                     height="310"
@@ -45,7 +45,7 @@ const Home = ({ artStart, artEnd, imgArt }) => {
                     src={article.multimedia[1].url}
                     alt={article.multimedia[1].caption || "Article Image"}
                   />
-                </Link>
+                </a>
               )}
           </div>
         ))}
