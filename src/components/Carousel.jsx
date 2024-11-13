@@ -53,6 +53,9 @@ function Carousel() {
           <FaArrowAltCircleRight />
         </button>
       </div>
+      <a href="https://www.nytimes.com/" target="_blank">
+        <span className="block font-semibold hover:underline">Read more on NYTimes.com</span>
+      </a>
     </section>
   );
 }

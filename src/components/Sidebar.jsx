@@ -13,7 +13,10 @@ const Sidebar = () => {
             <a href={article.link} target="_blank">
               <div>
                 {article["media:content"] && (
-                  <img width="330" height="250" loading="lazy" 
+                  <img
+                    width="330"
+                    height="250"
+                    loading="lazy"
                     className="w-full max-h-[250px] lg:max-h-[500px]  "
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}
@@ -74,7 +77,10 @@ const Sidebar = () => {
                 }
               >
                 {article["media:content"] && (
-                  <img width="100" height="150" loading="lazy" 
+                  <img
+                    width="100"
+                    height="150"
+                    loading="lazy"
                     className="h-full w-full py-4 object-cover"
                     src={article["media:content"]?.$.url}
                     alt={article.description || "Article Image"}
@@ -85,6 +91,11 @@ const Sidebar = () => {
           ))}
         </div>
       </div>
+      <a href="https://www.nytimes.com/" target="_blank">
+        <span className="block font-semibold pl-3 hover:underline">
+          Read more on NYTimes.com
+        </span>
+      </a>
     </aside>
   );
 };

@@ -43,7 +43,9 @@ function NewsFooter() {
             )
         )}
       </div>
-
+      <a href="https://www.nytimes.com/" target="_blank">
+        <span className="block font-semibold hover:underline">Read more on NYTimes.com</span>
+      </a>
       <div className="block font-bold border-t border-black pt-3">Well</div>
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-cols-5 ">
         {well.slice(0, 24).map(
@@ -77,6 +79,9 @@ function NewsFooter() {
             )
         )}
       </div>
+      <a href="https://www.nytimes.com/" target="_blank">
+        <span className="block font-semibold hover:underline">Read more on NYTimes.com</span>
+      </a>
     </section>
   );
 }
