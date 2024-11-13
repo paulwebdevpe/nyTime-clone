@@ -53,7 +53,6 @@ Questo è un progetto basato su React che recupera articoli di notizie dall'API 
 
 - **/**: Pagina principale che visualizza gli articoli principali.
 - **/:sectionId**: Visualizza gli articoli di una sezione specifica.
-- **/article**: Visualizza un articolo individuale.
 - **/login**: Pagina di login dell'utente.
 - **/profile**: Pagina del profilo utente, dove gli utenti possono aggiornare il proprio profilo e visualizzare gli articoli salvati.
 
