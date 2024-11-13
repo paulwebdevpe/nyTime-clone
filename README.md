@@ -47,7 +47,7 @@ Questo è un progetto basato su React che recupera articoli di notizie dall'API 
     npm run dev
 
 
-5. **Apri il tuo browser e vai su http://localhost:3000 per visualizzare l'app.**:
+5. **Apri il tuo browser e vai su http://localhost:5000 per visualizzare l'app.**:
 
 ## Rotte
 
