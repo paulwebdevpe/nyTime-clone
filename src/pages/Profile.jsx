@@ -83,8 +83,8 @@ const Profile = () => {
         {/* Profile section */}
         {auth.currentUser ? (
           <div className="max-w-[600px] mx-auto w-full px-8 lg:px-4 md:px-3 sm:px-3">
-            <div className="py-5 border-b-2 border-black">
-              <h1 className=" text-3xl pt-8 font-bold sm:text-center sm:py-4">
+            <div className="py-5 border-b-2 border-black sm:text-center">
+              <h1 className=" text-3xl pt-8 font-bold sm:py-4">
                 Good afternoon, {name ? name + "." : ""}
               </h1>
               <p>You've supported independent journalism since 2024.</p>
